@@ -31,7 +31,7 @@ def send_email():
             message['From'] = sender_email
             message['To'] = recipient
 
-            html_part = MIMEText(html_content, 'html')
+            html_part = MIMEText(html_content, 'html', 'utf-8')
             message.attach(html_part)
 
             smtp.sendmail(sender_email, recipient, message.as_string())
